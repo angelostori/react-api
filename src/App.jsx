@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import axios from "axios"
 /*
 Usate uno di questi due endpoint, a piacimento:
 
@@ -13,11 +15,11 @@ MILESTONE 2
 
 Prepariamo una card per ciascun attore/attrice, mostrandone le seguenti informazioni:
 
-nome
-anno nascita
-nazionalità
-biografia
-immagine
+nome 👍
+anno nascita 👍
+nazionalità 👍
+biografia 👍
+immagine 👍
 riconoscimenti
 
 MILESTONE 3
@@ -25,10 +27,33 @@ MILESTONE 3
 Mostriamo in pagina una card per ciascun attore, con grafica a piacimento!
 */
 
+
 function App() {
 
+  const [actors, setActors] = useState([])
+
+  function fetchActors() {
+    axios.get('https://lanciweb.github.io/demo/api/actors/')
+      .then(res => setActors(res.data))
+  }
+
+  useEffect(() => { fetchActors() }, [])
+
   return (
-   
+    <div>
+      <ul>
+        {
+          actors.map(actor => (
+            <li key={actor.id}>
+              <img src={actor.image} alt={actor.name} />
+              <h4>{actor.name}</h4>
+              <p>Born: {actor.birth_year}, {actor.nationality}</p>
+              <p>Bio: {actor.biography}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   )
 }
 
