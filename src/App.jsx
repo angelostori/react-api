@@ -41,26 +41,29 @@ function App() {
   useEffect(() => { fetchActors() }, [])
 
   return (
-    <div className='container'>
-      <h1 className="text-center mb-4">Actor List</h1>
-      <div className="row g-4">
 
-        {
-          actors.map(actor => (
-            <div key={actor.id} className='col-sm-6 col-md-4 col-lg-3'>
-              <div className='card shadow-sm h100'>
-                <img src={actor.image} alt={actor.name} className='card-img-top' />
-                <div className='card-body'>
-                  <h3 className='card-title'>{actor.name}</h3>
-                  <p className='card-text'><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
-                  <p className='card-text'><strong>Bio:</strong> {actor.biography}</p>
-                  <p className='card-text'><strong>Awards:</strong> {actor.awards.join(', ')}</p>
+    <div className='wrapper bg-body'>
+      <div className='container py-4'>
+        <h1 className="text-center mb-4">Actors List</h1>
+        <div className="row g-4">
+
+          {
+            actors.map(actor => (
+              <div key={actor.id} className='col-sm-6 col-md-4 col-lg-3'>
+                <div className='card shadow-lg h100'>
+                  <img src={actor.image} alt={actor.name} className='card-img-top' />
+                  <div className='card-body'>
+                    <h3 className='card-title'>{actor.name}</h3>
+                    <p className='card-text'><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
+                    <p className='card-text'><strong>Bio:</strong> {actor.biography}</p>
+                    <p className='card-text'><strong>Awards:</strong> {actor.awards.join(', ')}</p>
+                  </div>
+
                 </div>
-
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
   )
