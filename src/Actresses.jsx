@@ -29,7 +29,7 @@ function Actresses() {
 
     return (
 
-        <div className='wrapper bg-body'>
+        <div className='wrapper bg-danger'>
             <div className='container py-4'>
                 <h1 className="text-center mb-4">Actresses List</h1>
                 <div className="row g-4">
@@ -44,6 +44,7 @@ function Actresses() {
                                         <p className='card-text'><strong>Born:</strong> {actress.birth_year}, {actress.nationality}</p>
                                         <p className='card-text'><strong>Bio:</strong> {actress.biography}</p>
                                         <p className='card-text'><strong>Awards:</strong> {actress.awards}</p>
+                                        <p className='card-text'><strong>Most Famous Movie:</strong> {actress.most_famous_movies[0]}</p>
                                     </div>
 
                                 </div>

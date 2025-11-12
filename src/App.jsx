@@ -29,7 +29,7 @@ function App() {
 
   return (
 
-    <div className='wrapper bg-body'>
+    <div className='wrapper bg-primary'>
       <div className='container py-4'>
         <h1 className="text-center mb-4">Actors List</h1>
         <div className="row g-4">
@@ -44,6 +44,7 @@ function App() {
                     <p className='card-text'><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
                     <p className='card-text'><strong>Bio:</strong> {actor.biography}</p>
                     <p className='card-text'><strong>Awards:</strong> {actor.awards.join(', ')}</p>
+                    <p className='card-text'><strong>Most Famous Movie:</strong> {actor.known_for[0]}</p>
                   </div>
 
                 </div>
