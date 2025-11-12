@@ -46,9 +46,10 @@ function App() {
           actors.map(actor => (
             <li key={actor.id}>
               <img src={actor.image} alt={actor.name} />
-              <h4>{actor.name}</h4>
-              <p>Born: {actor.birth_year}, {actor.nationality}</p>
-              <p>Bio: {actor.biography}</p>
+              <h3>{actor.name}</h3>
+              <p><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
+              <p><strong>Bio:</strong> {actor.biography}</p>
+              <p><strong>Awards:</strong> {actor.awards.join(', ')}</p>
             </li>
           ))
         }
