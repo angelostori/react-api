@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from "axios"
+import 'bootstrap/dist/css/bootstrap.min.css'
 /*
 Usate uno di questi due endpoint, a piacimento:
 
@@ -40,20 +41,27 @@ function App() {
   useEffect(() => { fetchActors() }, [])
 
   return (
-    <div>
-      <ul>
+    <div className='container'>
+      <h1 className="text-center mb-4">Actor List</h1>
+      <div className="row g-4">
+
         {
           actors.map(actor => (
-            <li key={actor.id}>
-              <img src={actor.image} alt={actor.name} />
-              <h3>{actor.name}</h3>
-              <p><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
-              <p><strong>Bio:</strong> {actor.biography}</p>
-              <p><strong>Awards:</strong> {actor.awards.join(', ')}</p>
-            </li>
+            <div key={actor.id} className='col-sm-6 col-md-4 col-lg-3'>
+              <div className='card shadow-sm h100'>
+                <img src={actor.image} alt={actor.name} className='card-img-top' />
+                <div className='card-body'>
+                  <h3 className='card-title'>{actor.name}</h3>
+                  <p className='card-text'><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
+                  <p className='card-text'><strong>Bio:</strong> {actor.biography}</p>
+                  <p className='card-text'><strong>Awards:</strong> {actor.awards.join(', ')}</p>
+                </div>
+
+              </div>
+            </div>
           ))
         }
-      </ul>
+      </div>
     </div>
   )
 }
