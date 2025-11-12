@@ -44,7 +44,7 @@ function App() {
                     <p className='card-text'><strong>Born:</strong> {actor.birth_year}, {actor.nationality}</p>
                     <p className='card-text'><strong>Bio:</strong> {actor.biography}</p>
                     <p className='card-text'><strong>Awards:</strong> {actor.awards.join(', ')}</p>
-                    <p className='card-text'><strong>Most Famous Movie:</strong> {actor.known_for[0]}</p>
+                    <p className='card-text'><strong>Most Famous Movie:</strong> {actor.known_for.join(', ')}</p>
                   </div>
 
                 </div>

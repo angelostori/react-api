@@ -44,7 +44,7 @@ function Actresses() {
                                         <p className='card-text'><strong>Born:</strong> {actress.birth_year}, {actress.nationality}</p>
                                         <p className='card-text'><strong>Bio:</strong> {actress.biography}</p>
                                         <p className='card-text'><strong>Awards:</strong> {actress.awards}</p>
-                                        <p className='card-text'><strong>Most Famous Movie:</strong> {actress.most_famous_movies[0]}</p>
+                                        <p className='card-text'><strong>Most Famous Movie:</strong> {actress.most_famous_movies.join(', ')}</p>
                                     </div>
 
                                 </div>
